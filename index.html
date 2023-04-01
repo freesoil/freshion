@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Strawberries</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <!-- <img class="logo" src="logo.png" alt="Your Logo"> -->
+        <h1>Fresh Strawberries</h1>
+    </header>
+    <main>
+        <section class="product-details">
+            <img class="product-image" src="strawberries.jpg" alt="Fresh strawberries">
+            <h2>Farm-Fresh Strawberries</h2>
+            <p>Enjoy the taste of freshly picked, delicious strawberries delivered straight from our farm to your doorstep.</p>
+            <p>Price: $5.99/pound</p>
+        </section>
+        <section class="checkout">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="10" value="1">
+            <div class="delivery-options">
+                <h3>Delivery options:</h3>
+                <label><input type="radio" name="delivery" value="standard" checked> Standard (3-5 days) - $3.99</label><br>
+                <label><input type="radio" name="delivery" value="express"> Express (1-2 days) - $7.99</label><br>
+            </div>
+            <button class="cta-button" onclick="location.href='out-of-stock.html'">Check out</button>
+        </section>
+    </main>
+</body>
+</html>
+
+
