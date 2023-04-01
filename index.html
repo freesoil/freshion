@@ -21,11 +21,12 @@
         <section class="checkout">
             <label for="quantity">Quantity:</label>
             <input type="number" id="quantity" name="quantity" min="1" max="10" value="1">
-            <div class="delivery-options">
-                <h3>Delivery options:</h3>
-                <label><input type="radio" name="delivery" value="standard" checked> Standard (3-5 days) - $3.99</label><br>
-                <label><input type="radio" name="delivery" value="express"> Express (1-2 days) - $7.99</label><br>
-            </div>
+	    <h3><label for="delivery-options">Delivery Options:</label></h3>
+	    <select id="delivery-options">
+		<option value="standard">Standard (3-5 days)</option>
+		<option value="express">Express (1-2 days)</option>
+		<option value="overnight">Overnight</option>
+	    </select>
             <button class="cta-button" onclick="addToCart()">Check out</button>
         </section>
     </main>
