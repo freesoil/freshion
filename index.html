@@ -26,9 +26,20 @@
                 <label><input type="radio" name="delivery" value="standard" checked> Standard (3-5 days) - $3.99</label><br>
                 <label><input type="radio" name="delivery" value="express"> Express (1-2 days) - $7.99</label><br>
             </div>
-            <button class="cta-button" onclick="location.href='out-of-stock.html'">Check out</button>
+            <button class="cta-button" onclick="addToCart()">Check out</button>
         </section>
     </main>
+    <script>
+      function addToCart() {
+	  const quantity = document.getElementById('quantity').value;
+	  const deliveryOption = document.getElementById('delivery-options').value;
+
+	  sessionStorage.setItem('quantity', quantity);
+	  sessionStorage.setItem('deliveryOption', deliveryOption);
+
+	  window.location.href = 'out-of-stock.html';
+      }
+    </script>
 </body>
 </html>
 

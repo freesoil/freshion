@@ -32,6 +32,7 @@ async function handleSubmit(event) {
 
         if (response.ok) {
             console.log('Data submitted successfully');
+            window.location.href = 'confirmation.html'; // Replace with the URL of your confirmation page
         } else {
             console.error('Error submitting data:', response.statusText);
         }
