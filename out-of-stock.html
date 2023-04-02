@@ -16,15 +16,16 @@
         <section class="out-of-stock">
             <h2>We're sorry, fresh strawberries are currently out of stock.</h2>
             <p>Enter your email address below to be notified when they are available again:</p>
-	    <form id="registerForm" onsubmit="handleSubmit(event)">
+	    <!-- <form id="registerForm" onsubmit="handleSubmit(event)"> -->
+	    <form id="registerForm" method="POST" action="https://script.google.com/macros/s/AKfycbw7FL5NptauYpzzuj7l33mhKdQcXQ4n_ZtIVUdbmssB9ppwjaWFTfdt0izRYo0ZNNguoQ/exec">
                 <table>
                     <tr>
                         <td><label for="name">Name (optional):</label></td>
-                        <td><input type="text" id="name" name="name"></td>
+                        <td><input type="text" id="name" name="Name"></td>
                     </tr>
                     <tr>
                         <td><label for="email">Email:</label></td>
-                        <td><input type="email" id="email" name="email" required></td>
+                        <td><input type="email" id="email" name="Email" required></td>
                     </tr>
                     <tr>
                         <td><label for="address">Address (optional):</label></td>
