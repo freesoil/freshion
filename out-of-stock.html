@@ -48,11 +48,13 @@
             const quantity = sessionStorage.getItem('quantity');
             const deliveryOption = sessionStorage.getItem('deliveryOption');
             const price = sessionStorage.getItem('price');
+            const entry = sessionStorage.getItem('entry');
             data = new FormData(form);
             data.append("Quantity", quantity);
             data.append("Delivery", deliveryOption);
             data.append("Price", price);
             data.append("Event", "register");
+            data.append("Entry", entry);
             fetch("https://script.google.com/macros/s/AKfycbzSJp-eXJKB15OiK9cZWvDT1knrZEZpTKGan23c6kLKyvPs1w4HfES8unKyJ5Igf7KC/exec", {
                 method: "POST",
                 body: data

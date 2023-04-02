@@ -33,28 +33,36 @@
         </section>
     </main>
     <script>
+        function getURLParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
       function addToCart(event) {
-      event.preventDefault();
-	  const quantity = document.getElementById('quantity').value;
-	  const deliveryOption = document.getElementById('delivery-options').value;
-	  const price = document.getElementById('price').textContent;
+        event.preventDefault();
+        const quantity = document.getElementById('quantity').value;
+        const deliveryOption = document.getElementById('delivery-options').value;
+        const price = document.getElementById('price').textContent;
+        const entry = getURLParameter('entry');
 
-	  sessionStorage.setItem('quantity', quantity);
-	  sessionStorage.setItem('price', price);
-	  sessionStorage.setItem('deliveryOption', deliveryOption);
+        sessionStorage.setItem('quantity', quantity);
+        sessionStorage.setItem('price', price);
+        sessionStorage.setItem('deliveryOption', deliveryOption);
+        sessionStorage.setItem('entry', entry);
 
-      const form = document.getElementById("checkoutForm");
-	  data = new FormData(form);
-	  data.append("Quantity", quantity);
-	  data.append("Delivery", deliveryOption);
-	  data.append("Price", price);
-	  data.append("Event", "add_to_cart");
-	  fetch("https://script.google.com/macros/s/AKfycbzSJp-eXJKB15OiK9cZWvDT1knrZEZpTKGan23c6kLKyvPs1w4HfES8unKyJ5Igf7KC/exec", {
-	      method: "POST",
-	      body: data
-	  });
+        const form = document.getElementById("checkoutForm");
+        data = new FormData(form);
+        data.append("Quantity", quantity);
+        data.append("Delivery", deliveryOption);
+        data.append("Price", price);
+        data.append("Event", "add_to_cart");
+        data.append("Entry", entry);
+        fetch("https://script.google.com/macros/s/AKfycbzSJp-eXJKB15OiK9cZWvDT1knrZEZpTKGan23c6kLKyvPs1w4HfES8unKyJ5Igf7KC/exec", {
+            method: "POST",
+            body: data
+        });
 
-	  window.location.href = 'out-of-stock.html';
+        window.location.href = 'out-of-stock.html';
       }
     </script>
 </body>
