@@ -16,27 +16,43 @@
             <img class="product-image" src="strawberries.jpg" alt="Fresh strawberries">
             <h2>Farm-Fresh Strawberries</h2>
             <p>Enjoy the taste of freshly picked, delicious strawberries delivered straight from our farm to your doorstep.</p>
-            <p>Price: $5.99/pound</p>
+	    <p>Price: <span id="price">$5.99/lb</span></p>
         </section>
         <section class="checkout">
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" min="1" max="10" value="1">
-	    <h3><label for="delivery-options">Delivery Options:</label></h3>
-	    <select id="delivery-options">
-		<option value="standard">Standard (3-5 days)</option>
-		<option value="express">Express (1-2 days)</option>
-		<option value="overnight">Overnight</option>
-	    </select>
-            <button class="cta-button" onclick="addToCart()">Check out</button>
+            <form id="checkoutForm" onsubmit="addToCart(event)">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="10" value="1">
+                <h3><label for="delivery-options">Delivery Options:</label></h3>
+                <select id="delivery-options">
+                <option value="standard">Standard (3-5 days)</option>
+                <option value="express">Express (1-2 days)</option>
+                <option value="overnight">Overnight</option>
+                </select>
+                <button class="cta-button" type="submit">Check out</button>
+            </form>
         </section>
     </main>
     <script>
-      function addToCart() {
+      function addToCart(event) {
+      event.preventDefault();
 	  const quantity = document.getElementById('quantity').value;
 	  const deliveryOption = document.getElementById('delivery-options').value;
+	  const price = document.getElementById('price').textContent;
 
 	  sessionStorage.setItem('quantity', quantity);
+	  sessionStorage.setItem('price', price);
 	  sessionStorage.setItem('deliveryOption', deliveryOption);
+
+      const form = document.getElementById("checkoutForm");
+	  data = new FormData(form);
+	  data.append("Quantity", quantity);
+	  data.append("Delivery", deliveryOption);
+	  data.append("Price", price);
+	  data.append("Event", "add_to_cart");
+	  fetch("https://script.google.com/macros/s/AKfycbzSJp-eXJKB15OiK9cZWvDT1knrZEZpTKGan23c6kLKyvPs1w4HfES8unKyJ5Igf7KC/exec", {
+	      method: "POST",
+	      body: data
+	  });
 
 	  window.location.href = 'out-of-stock.html';
       }
