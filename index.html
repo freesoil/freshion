@@ -14,14 +14,15 @@
     <main>
         <section class="product-details">
             <img class="product-image" src="strawberries.jpg" alt="Fresh strawberries">
-            <h2>Next Delivery: Local Farm Strawberries</h2>
-	    <p>Weekend of May 6 & 7 </p>
+	    <p>Next Delivery: May 6 & 7th</p>
+            <h2>Local Farm Strawberries</h2>
             <p>Alive taste of a better earth</p>
-            <p>Name your price once delivered</p>
         </section>
         <section class="checkout">
             <form id="checkoutForm" onsubmit="addToCart(event)">
-	        <p>Common Retail Price: <span id="price">$4 ~ $6 / lb</span></p>
+                <p>Name your own price once delivered</p>
+		<p>Common Retail Price:</p>
+	        <p><span id="price">$4 (regular) ~ $6 (organic) / lb</span></p>
                 <label for="quantity">Quantity:</label>
                 <input type="number" id="quantity" name="quantity" min="1" max="10" value="1"> lb
                 <h3><label for="delivery-options">Delivery Options:</label></h3>
