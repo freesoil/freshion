@@ -3,32 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fresh Strawberries</title>
+    <title>Farmers' Market, Delivered</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <!-- <img class="logo" src="logo.png" alt="Your Logo"> -->
-        <h1>Fresh Strawberries</h1>
+        <h1>Farmers' Market, Delivered</h1>
     </header>
     <main>
         <section class="product-details">
             <img class="product-image" src="strawberries.jpg" alt="Fresh strawberries">
-            <h2>Farm-Fresh Strawberries</h2>
-            <p>Enjoy the taste of freshly picked, delicious strawberries delivered straight from our farm to your doorstep.</p>
+            <h2>May 6-7th Delivery: Organic Strawberries</h2>
+            <p>Alive taste of a better earth</p>
+            <p>Name your price, once delivered</p>
         </section>
         <section class="checkout">
             <form id="checkoutForm" onsubmit="addToCart(event)">
-	        <p><b><span id="price">$5.99/lb</span></b></p>
+	        <p>Common Retail Price: <span id="price">$4.6~7 lb</span></p>
                 <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity" name="quantity" min="1" max="10" value="1">
+                <input type="number" id="quantity" name="quantity" min="1" max="10" value="1"> lb
                 <h3><label for="delivery-options">Delivery Options:</label></h3>
                 <select id="delivery-options">
-                <option value="standard">Standard (3-5 days)</option>
-                <option value="express">Express (1-2 days)</option>
-                <option value="overnight">Overnight</option>
+                <option value="sat_afternoon">Saturday after 5:00 PM</option>
+                <option value="sun_morning">Sunday before 9:00 AM</option>
+                <option value="sun_afternoon">Sunday after 5:00 PM</option>
                 </select>
-                <button class="cta-button" type="submit">Check out</button>
+                <button class="cta-button" type="submit">Sign up for this Delivery</button>
             </form>
         </section>
     </main>

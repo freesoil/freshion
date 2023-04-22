@@ -10,34 +10,35 @@
 <body>
     <header>
       <!-- <img class="logo" src="logo.png" alt="Your Logo"> -->
-        <h1>Fresh Strawberries - Out of Stock</h1>
+        <h1>Farmers' Market, Delivered</h1>
     </header>
     <main>
         <section class="out-of-stock">
-            <h2>We're sorry, fresh strawberries are currently out of stock.</h2>
-            <p>Enter your email address below to be notified when they are available again:</p>
+            <h2>How do we find you?</h2>
 	    <form id="registerForm" onsubmit="handleSubmit(event)">
 	    <!-- https://github.com/levinunnink/html-form-to-google-sheet -->
 	    <!-- <form id="registerForm" method="POST" action="https://script.google.com/macros/s/AKfycbw7FL5NptauYpzzuj7l33mhKdQcXQ4n_ZtIVUdbmssB9ppwjaWFTfdt0izRYo0ZNNguoQ/exec"> -->
                 <table>
                     <tr>
-                        <td><label for="name">Name (optional):</label></td>
-                        <td><input type="text" id="name" name="Name"></td>
+                        <td><label for="name">Name:</label></td>
+                        <td><input type="text" id="name" name="Name" required></td>
                     </tr>
                     <tr>
                         <td><label for="email">Email:</label></td>
                         <td><input type="email" id="email" name="Email" required></td>
                     </tr>
                     <tr>
-                        <td><label for="address">Address (optional):</label></td>
-                        <td><input type="text" id="address" name="Address"></td>
+                        <td><label for="address">Address:</label></td>
+                        <td><input type="text" id="address" name="Address" required></td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td><button class="cta-button" type="submit">Notify me</button></td>
+			<td><button class="cta-button" type="submit">Confirm</button></td>
                     </tr>
                 </table>
             </form>
+	    <p>Once delivered, you will receive instructions to pay through venmo or paypal.</p>
+	    <p>Worry-free! Name your price once you receive the produce.</p>
         </section>
     </main>
     <script>
